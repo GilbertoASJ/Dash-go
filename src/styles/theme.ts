@@ -3,8 +3,8 @@ import { extendTheme } from '@chakra-ui/react'
 export const theme = extendTheme({
 	colors: {
 		gray: {
-			"900": "#181b23",
-			"800": "#1f2029",
+			"900": "#0f1419",
+			"800": "#4d556666",
 			"700": "#353646",
 			"600": "#4b4d63",
 			"500": "#616480",
@@ -13,7 +13,12 @@ export const theme = extendTheme({
 			"200": "#b3b5c6",
 			"100": "#d1d2dc",
 			"50": "#eeebf2",
-		}
+		},
+	},
+
+	fonts: {
+		heading: 'Roboto',
+		body: 'Roboto',
 	},
 
 	styles: {
