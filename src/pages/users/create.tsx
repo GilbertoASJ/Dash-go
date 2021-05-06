@@ -17,6 +17,7 @@ export default function CreateUser() {
 					<Divider my="6" borderColor="gray.700" />
 
 					<VStack spacing="8">
+
 						<SimpleGrid minChildWidth="240px" spacing="8" w="100%">
 							<Input name="name" label="Nome completo" />
 							<Input name="email" type="email" label="E-mail" />
@@ -26,6 +27,7 @@ export default function CreateUser() {
 							<Input name="password" type="password" label="Senha" />
 							<Input name="password_confirmation" type="password" label="Confirmação da senha" />
 						</SimpleGrid>
+						
 					</VStack>
 
 					<Flex mt="8" justify="flex-end">
