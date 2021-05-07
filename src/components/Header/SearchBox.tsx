@@ -9,7 +9,6 @@ export function SearchBox() {
 			py="4"
 			px="6"
 			ml="8"
-			mx="auto"
 			maxWidth={400}
 			alignSelf="center"
 			color="gray.200"
