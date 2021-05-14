@@ -5,7 +5,7 @@ interface InputProps extends ChakraInputProps {
 	label?: string;
 }
 
-export function Input({ name, label, ...rest }: InputProps) {
+const InputBase = ({ name, label, ...rest }: InputProps) => {
 	return (
 		<FormControl>
 			{ !!label && <FormLabel htmlFor={name}>{label}</FormLabel>}
@@ -25,3 +25,5 @@ export function Input({ name, label, ...rest }: InputProps) {
 		</FormControl>
 	);
 }
+
+export const Input = 
