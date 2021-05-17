@@ -10,6 +10,9 @@ type SignInFormData = {
 export default function SignIn() {
 
   const { register, handleSubmit, formState } = useForm();
+  const { errors } = formState
+
+  console.log(errors)
 
   const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
 
@@ -31,7 +34,14 @@ export default function SignIn() {
     	>
     		<Stack spacing="4">
 				
-    			<Input name="email" type="email" label="E-mail" {...register('email')} />
+    			<Input 
+            name="email" 
+            type="email" 
+            label="E-mail" 
+            error={erros.email}
+            {...register('email')} 
+            ref={register('required')}
+          />
     			<Input name="password" type="password" label="Senha" {...register('password')} />
 	    		
     		</Stack>
