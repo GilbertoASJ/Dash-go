@@ -38,9 +38,9 @@ export default function SignIn() {
             name="email" 
             type="email" 
             label="E-mail" 
-            error={erros.email}
+            error={errors.email}
             {...register('email')} 
-            // ref={register({ required: 'E-mail obrigatório' })}
+            ref={register({ required: 'E-mail obrigatório' })}
           />
     			<Input name="password" type="password" label="Senha" {...register('password')} />
 	    		
