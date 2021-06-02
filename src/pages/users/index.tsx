@@ -24,7 +24,7 @@ export default function UserList() {
 		const data = await response.json()
 	
 		const users = data.users.map(user => {
-			return (
+			return {
 				id: user.id,
 				name: user.name,
 				email: user.email,
@@ -33,10 +33,13 @@ export default function UserList() {
 					month: 'long',
 					year: 'numeric'
 				})
-			);
+			};
 		});
 
 		return users;
+
+	}, {
+		staleTime: 1000 * 5,
 	});
 
 	const isWideVersion = useBreakpointValue({
