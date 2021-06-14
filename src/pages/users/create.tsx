@@ -2,6 +2,8 @@ import { Box, Text, Flex, Heading, Button, Divider, VStack, SimpleGrid, HStack }
 import { Header } from '../../components/Header'
 import { Sidebar } from '../../components/Sidebar'
 import { Input } from '../../components/Form/Input'
+import { useMutation } from 'react-query'
+import {  } from '../../services/api'
 
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as yup from 'yup'
@@ -27,6 +29,19 @@ const createUserFormScheme = yup.object().shape({
 
 export default function CreateUser() {
 
+	const createUser = useMutation(async(user: CreateUserFormData) => {
+
+		const response = await api.post('users', {
+			user: {
+				...user,
+				created_at: new Date(),
+			}
+
+		})
+
+		return response.data.user;
+	});
+
 	const { register, handleSubmit, formState } = useForm({
 		resolver: yupResolver(createUserFormScheme),
 	})
@@ -34,9 +49,8 @@ export default function CreateUser() {
 	const { errors } = formState;
 
 	const handleCreateUser: SubmitHandler<CreateUserFormData> = async (values) => {
-		await new Promise(resolve => setTimeout(resolve, 2000))
+		await createUser.mutateAsync(values)
 
-		console.log(values)
 	}
 
 	return (
